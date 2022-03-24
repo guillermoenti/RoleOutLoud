@@ -31,8 +31,6 @@ class GamesListFragment : Fragment() {
         b = FragmentGamesListBinding.inflate(inflater)
 
 
-        //Lo movido empieza aquí
-        //Antes estaba en onViewCreated
         val gamesListView = b.gamesList
         context?.let {
             gamesListView.layoutManager = LinearLayoutManager(it)
@@ -70,7 +68,6 @@ class GamesListFragment : Fragment() {
 
             filterListAndRefresh()
         }
-        //Acaba aquí
 
 
 
@@ -94,21 +91,11 @@ class GamesListFragment : Fragment() {
         b.gamesList.adapter?.notifyDataSetChanged()
     }
 
-
-
-    //override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    //    super.onViewCreated(view, savedInstanceState)
-    //
-    //
-    //}
-
     override fun onResume() {
         super.onResume()
 
         games.clear()
         games.addAll(Games.map { it.name })
-
-        //binding.gamesChipGroup.notifySubtreeAccessibilityStateChanged()
 
         filterListAndRefresh()
         b.gamesSearchBar.invalidate()

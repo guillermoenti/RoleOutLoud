@@ -18,4 +18,5 @@
     <string name="see_more">See more</string>
     <string name="character_x_image">Character X image</string>
     <string name="game_description">Descripción de la Partida</string>
+    <string name="character_image_footer">Click en la imagen para añadir una</string>
 </resources>

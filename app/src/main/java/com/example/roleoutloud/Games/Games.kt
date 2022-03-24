@@ -3,7 +3,7 @@ package com.example.roleoutloud.Games
 object Games: ArrayList<Game>() {
 
     init{
-        add(Game("Game1"))
-        add(Game("Partida"))
+        add(Game("Partida 1 ya creada"))
+        add(Game("Partida 2 ya creada", "Esta partida ya la tenías creada de antes"))
     }
 }

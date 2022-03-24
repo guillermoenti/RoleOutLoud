@@ -27,15 +27,11 @@ class GameRecyclerViewAdapter(val context: Context, val games: List<Game>) :
         // Set name
         holder.render(games[position])
 
-        // It converts the ID to the properly color and set it to the image
-        //holder.image.setColorFilter(context.getColor(color))
-
     }
 
     override fun getItemCount(): Int = games.size
 
     inner class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-//        val binding = ItemListGameBinding.bind(view)
         fun render(game:Game){
             view.findViewById<TextView>(R.id.gameName).text = game.name
             view.findViewById<TextView>(R.id.game_description).text = game.description

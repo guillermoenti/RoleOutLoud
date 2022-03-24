@@ -19,7 +19,13 @@ class AddGameActivity : AppCompatActivity() {
             val gameDescription = b.gameDescriptionInput.text.toString()
 
             if (b.gameNameInput.text.toString() != "") {
-                Games.add(Game(gameName, gameDescription))
+                if(b.gameDescriptionInput.text.toString() != ""){
+                    Games.add(Game(gameName, gameDescription))
+                }
+                else{
+                    Games.add(Game(gameName))
+                }
+
                 finish()
             } else {
                 b.gameNameInput.error = "Debes poner un nombre a la Partida"

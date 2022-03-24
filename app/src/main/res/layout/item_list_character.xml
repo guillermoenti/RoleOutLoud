@@ -11,10 +11,9 @@
         android:id="@+id/itemCardView"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
         android:elevation="12dp"
         app:cardCornerRadius="40dp"
-        app:layout_constraintEnd_toStartOf="@+id/characterName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,20 +21,24 @@
             android:id="@+id/itemPrevImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/character_image_description"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_baseline_person_24"
-            android:contentDescription="@string/character_image_description" />
+            android:src="@drawable/ic_baseline_person_24" />
     </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/characterName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:maxLines="4"
         android:text="@string/character"
         android:textAppearance="?attr/textAppearanceListItem"
-        android:textSize="34sp"
+        app:autoSizeMaxTextSize="60sp"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/itemCardView"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
