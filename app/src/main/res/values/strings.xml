@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">RoleOutLoud</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_character_description">Image character</string>
+    <string name="character_name">Nombre del Personaje</string>
+    <string name="create">Crear</string>
+    <string name="game_name">Nombre de la Partida</string>
+    <string name="character_item_image_description">Character Item Image</string>
+    <string name="add_game">Add game</string>
+    <string name="games">Partidas</string>
+    <string name="characters">Personajes</string>
+    <string name="search">Search</string>
+    <string name="character_image_description">Character image</string>
+    <string name="character">Personaje</string>
+    <string name="game_image">Game image</string>
+    <string name="description">Descripción</string>
+    <string name="see_more">See more</string>
+    <string name="character_x_image">Character X image</string>
+    <string name="game_description">Descripción de la Partida</string>
+</resources>
