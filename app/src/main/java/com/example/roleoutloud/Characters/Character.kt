@@ -8,7 +8,7 @@ class Character (
     var name: String,
     var game: Game? = null,
     var previewImage: Uri? = null,
-    var characterSheetImages: ArrayList<Image> = ArrayList()
+    var characterSheetImages: ArrayList<Uri> = ArrayList()
 )
 
 

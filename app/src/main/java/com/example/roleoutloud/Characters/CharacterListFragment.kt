@@ -92,21 +92,12 @@ class CharacterListFragment : Fragment() {
         b.charactersList.adapter?.notifyDataSetChanged()
     }
 
-
-
-    //override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    //    super.onViewCreated(view, savedInstanceState)
-    //
-    //
-    //}
-
     override fun onResume() {
         super.onResume()
 
         characters.clear()
         characters.addAll(Characters.map { it.name })
 
-        //binding.charactersChipGroup.notifySubtreeAccessibilityStateChanged()
 
         filterListAndRefresh()
         b.charactersSearchBar.invalidate()

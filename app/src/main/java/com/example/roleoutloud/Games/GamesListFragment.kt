@@ -69,10 +69,6 @@ class GamesListFragment : Fragment() {
             filterListAndRefresh()
         }
 
-
-
-        // Inflate the layout for this fragment
-        //Antes el return del binding era diferente
         return b.root
     }
 

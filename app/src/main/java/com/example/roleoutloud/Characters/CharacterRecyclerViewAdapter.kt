@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.roleoutloud.R
 import com.example.roleoutloud.databinding.ItemListCharacterBinding
 
-class       CharacterRecyclerViewAdapter(val context: Context, private val characters: List<Character>) :
+class CharacterRecyclerViewAdapter(val context: Context, private val characters: List<Character>) :
     RecyclerView.Adapter<CharacterRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
