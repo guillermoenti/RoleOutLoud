@@ -8,7 +8,8 @@ class Character (
     var name: String,
     var game: Game? = null,
     var previewImage: Uri? = null,
-    var characterSheetImages: ArrayList<Uri> = ArrayList()
+    var characterSheetImages: List<Uri> = listOf(),
+    val id: Int = Characters.size
 )
 
 

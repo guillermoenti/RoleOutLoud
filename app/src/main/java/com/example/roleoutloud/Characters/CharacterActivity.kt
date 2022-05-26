@@ -14,5 +14,10 @@ class CharacterActivity : AppCompatActivity() {
         b = ActivityCharacterBinding.inflate(layoutInflater)
 
         setContentView(b.root)
+
+        b.characterSheetImage.setImageURI(Characters[2].characterSheetImages[0])
+
+
+
     }
 }

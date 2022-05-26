@@ -1,17 +1,22 @@
 package com.example.roleoutloud.Characters
 
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
+import android.os.Messenger
 import android.view.*
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roleoutloud.Games.Games
 import com.example.roleoutloud.R
 import com.example.roleoutloud.databinding.ActivityAddCharacterBinding
+import java.security.AccessController.getContext
+
 
 class AddCharacterActivity : AppCompatActivity() {
 
@@ -33,6 +38,7 @@ class AddCharacterActivity : AppCompatActivity() {
             sheetImages = uriArray
             //Update the recycler view
             mAdapter?.updateData(sheetImages)
+
         }
 
 
@@ -81,6 +87,7 @@ class AddCharacterActivity : AppCompatActivity() {
             if (binding.characterNameInput.text.toString() != "") {
                 val tmpCharacter = Character(characterName)
                 tmpCharacter.previewImage = charImage
+                tmpCharacter.characterSheetImages = sheetImages
 
                 Characters.add(tmpCharacter)
                 finish()
@@ -102,4 +109,33 @@ class AddCharacterActivity : AppCompatActivity() {
     }
 
 
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        //if ok user selected a file
+//        if (resultCode == RESULT_OK) {
+//            val sourceTreeUri = data.data
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//                getContext().getContentResolver().takePersistableUriPermission(
+//                    sourceTreeUri,
+//                    Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+//                )
+//            }
+//        }
+//    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (resultCode == RESULT_OK) {
+            val sourceTreeUri = data?.data
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                sourceTreeUri?.let {
+                    this.getContentResolver().takePersistableUriPermission(
+                        it,
+                        Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+                    )
+                }
+            }
+        }
+    }
 }
