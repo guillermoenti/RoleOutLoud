@@ -10,11 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.roleoutloud.R
 import com.example.roleoutloud.databinding.ItemListAddSheetBinding
 
-class AddCharacterRecyclerViewAdapter(val context: Context, private val sheets: List<Uri>) : RecyclerView.Adapter<AddCharacterRecyclerViewAdapter.ViewHolder>() {
+class AddCharacterRecyclerViewAdapter(val context: Context, private var sheets: List<Uri>) : RecyclerView.Adapter<AddCharacterRecyclerViewAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         private val binding = ItemListAddSheetBinding.bind(view)
-
         val image: ImageView = binding.imageView
     }
 
@@ -32,6 +31,12 @@ class AddCharacterRecyclerViewAdapter(val context: Context, private val sheets: 
     }
 
     override fun getItemCount(): Int = sheets.size
+    fun updateData(sheetImages: List<Uri>?) {
+        if (sheetImages != null) {
+            sheets = sheetImages
+            notifyDataSetChanged()
+        }
+    }
 
 
 }
