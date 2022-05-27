@@ -38,6 +38,7 @@ class CharacterRecyclerViewAdapter(val context: Context, private val characters:
 
         holder.itemView.setOnClickListener{
             val intent = Intent(context, CharacterActivity::class.java)
+            intent.putExtra("ID", position)
             context.startActivity(intent)
         }
 
